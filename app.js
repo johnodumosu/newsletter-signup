@@ -6,7 +6,7 @@ const https = require('https');
 //const request = require('request');
 
 const app = express();
-const port = 3000 || process.env.PORT;
+const port = process.env.PORT || 3000;
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -69,7 +69,7 @@ app.post('/failure', (req,res) => {
 
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log('Example app listening on port ${port}');
 });
 
 //API Key: d9de033b291fd985600509ff8c29005d-us14
